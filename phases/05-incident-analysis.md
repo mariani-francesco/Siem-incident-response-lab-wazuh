@@ -34,9 +34,9 @@ This progression reflects a typical post-compromise scenario.
 
 ## Analysis
 
-The repeated failed sudo attempts suggest that the user was attempting to gain elevated privileges.
+The repeated failed sudo attempts suggest an attempt to obtain elevated privileges through unauthorized or improper use of sudo.
 
-After successfully obtaining root access, the user executed privileged actions and created a new account.
+After successfully obtaining root access, the user executed privileged actions and created a new account.  
 This activity represents a potential persistence mechanism, allowing continued access to the system.
 
 The combination of these events strongly suggests unauthorized use of privileges and a compromised account.
@@ -60,33 +60,28 @@ At this stage, no direct remediation actions were performed.
 
 The incident was validated and escalated according to standard SOC procedures.
 
-In a real SOC environment, containment and remediation activities are typically handled by higher-level teams after proper validation and escalation. For this reason I created a report to send to the Incident Response Team.
+In a real SOC environment, containment and remediation activities are typically handled by higher-level teams after proper validation and escalation. For this reason, an incident report was prepared and escalated to the Incident Response Team.
 
 ---
 
-## Incident Report (Escalation)
+## Incident Escalation Report
 
-**Title:** Suspicious Privilege Escalation and Unauthorized User Creation Detected
+A formal incident escalation report was prepared following validation of the suspicious activity.
 
-**Severity:** High
+The report summarizes:
 
-**Summary:**
-Multiple security alerts were triggered on the Ubuntu server indicating suspicious privileged activity. The events suggest a potential compromise of a user account.
+* detected alerts
+* incident timeline
+* impact assessment
+* indicators of compromise
+* escalation details
+* recommended actions
 
-**Details:**
-The following sequence of actions was observed:
+The report was prepared for escalation to the Incident Response Team.
 
-* Multiple failed attempts to execute privileged commands using `sudo`
-* Successful privilege escalation to root access
-* Creation of a new user account (`backdoor_user`)
+### Report
 
-These activities indicate possible unauthorized access and the establishment of persistence on the system.
-
-**Impact:**
-The attacker may have gained full administrative control of the system, with the ability to access sensitive data, modify configurations, and maintain long-term access.
-
-**Status:** Escalated to Incident Response Team for further investigation and containment
-**Assigned To:** Incident Response Team
+[incident-escalation-report.pdf](../reports/incident-escalation-report.pdf)
 
 ---
 
@@ -99,6 +94,7 @@ The following general security measures are recommended:
 * Monitor failed privilege escalation attempts
 * Regularly audit user accounts
 * Implement multi-factor authentication (MFA)
+* Maintain centralized SIEM monitoring and alert correlation
 * Maintain continuous log monitoring
 
 ---
