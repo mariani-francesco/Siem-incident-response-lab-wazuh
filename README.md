@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project simulates a realistic cybersecurity incident within a controlled lab environment using a SIEM platform.
+This project simulates a realistic cybersecurity incident within a controlled lab using the Wazuh SIEM platform.
 
 The goal is to demonstrate how security events are **collected, correlated, and analyzed** to detect and respond to a potential intrusion.
 
